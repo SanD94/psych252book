@@ -20,6 +20,7 @@ library("rstanarm")   # for Bayesian models
 library("patchwork")  # for making figure panels
 library("ggrepel")    # for labels in ggplots
 library("broom")      # for tidying things up
+library("broom.mixed")# for tidying things up
 library("gganimate")  # for animations
 library("GGally")     # for pairs plot
 library("patchwork")  # for figure panels

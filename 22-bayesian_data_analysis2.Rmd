@@ -201,6 +201,7 @@ distribution(df.attitude$rating) = normal(mu, sd)
 
 # define the model
 m = model(b0, b1, sd)
+ ## End(Not run)
 ```
 
 Visualize the model as graph: 
@@ -309,9 +310,9 @@ p = df.draws %>%
                   ylim = c(20, 100)) +
   transition_manual(draw)
 
-animate(p, nframes = 60, width = 800, height = 600, res = 96, type = "cairo")
+last_animate <- animate(p, nframes = 60, width = 800, height = 600, res = 96, type = "cairo")
 
-# anim_save("posterior_predictive.gif")
+anim_save("posterior_predictive.gif", animation = last_animate)
 ```
 
 #### Prior predictive check 

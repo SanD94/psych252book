@@ -68,13 +68,15 @@ df.data = tibble(
 # plotting function
 plot_fit = function(i){
   # calculate RMSE
-  rmse = lm(formula = y ~ poly(x, degree = i, raw = TRUE),
-            data = df.data) %>% 
-    augment() %>% 
-    summarize(rmse = .resid^2 %>% 
-                mean() %>% 
-                sqrt() %>% 
-                round(2))
+  rmse <- lm(
+    formula = y ~ poly(x, degree = i, raw = TRUE),
+    data = df.data
+  ) %>%
+    augment(df.data) %>%
+    summarize(rmse = .resid^2 %>%
+      mean() %>%
+      sqrt() %>%
+      round(2))
     
   # make a plot
   ggplot(data = df.data,
@@ -132,7 +134,7 @@ plot_fit = function(i){
             data = df.data)
   
   rmse = fit %>% 
-    augment() %>% 
+    augment(df.data) %>% 
     summarize(rmse = .resid^2 %>% 
                 mean() %>% 
                 sqrt() %>% 

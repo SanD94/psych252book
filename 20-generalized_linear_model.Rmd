@@ -466,10 +466,10 @@ ggplot(data = df.interaction_linear,
   mytheme
 
 # fit the linear model 
-fit = lm(formula = y ~ 1 + dummy * continuous,
+fitlm = lm(formula = y ~ 1 + dummy * continuous,
          data = df.interaction_linear)
 
-fit %>% 
+fitlm %>% 
   summary()
 ```
 

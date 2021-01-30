@@ -466,7 +466,7 @@ samples = n_samples %>%
 
 # put samples in data frame and compute PRE 
 df.samples = samples %>% 
-  as_tibble(.name_repair = ~ 1:ncol(samples)) %>% 
+  as_tibble(.name_repair = ~ str_c(1:ncol(samples))) %>% 
   mutate(sample = 1:n()) %>% 
   pivot_longer(cols = -sample,
                names_to = "index",

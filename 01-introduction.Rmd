@@ -95,6 +95,7 @@ library("brms")         # Bayesian regression
 # Misc 
 library("tictoc")       # timing things
 library("MASS")         # various useful functions (e.g. bootstrapped confidence intervals)
+library("effectsize")   # for computing effect size measures
 library("lsr")          # for computing effect size measures
 library("extrafont")    # additional fonts
 library("pwr")          # for power calculations

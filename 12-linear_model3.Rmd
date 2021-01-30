@@ -123,7 +123,7 @@ df.plot = df.poker %>%
 df.augment = fit_c %>% 
   augment() %>% 
   clean_names() %>% 
-  bind_cols(df.plot %>% select(balance, hand, hand_jitter))
+  bind_cols(df.plot %>% select(hand, hand_jitter))
 
 ggplot(data = df.plot, 
        mapping = aes(x = hand_jitter,
@@ -399,7 +399,7 @@ df.plot = df.poker %>%
 df.augment = fit_c %>% 
   augment() %>% 
   clean_names() %>% 
-  bind_cols(df.plot %>% select(balance, hand, hand_jitter))
+  bind_cols(df.plot %>% select(hand, hand_jitter))
 
 ggplot(data = df.plot, 
        mapping = aes(x = hand_jitter,

@@ -874,7 +874,7 @@ pp_check(fit.brm9,
 
 ```{r bda3-58}
 fit.brm8 %>% 
-  tidy() %>% 
+  tidy(effects = "fixed") %>% 
   select(estimate:conf.high) %>% 
   kable(digits = 2) %>% 
   kable_styling()
@@ -901,7 +901,7 @@ fit.brm8 %>%
   ggplot(data = .,
          mapping = aes(y = variable,
                        x = value)) +
-  stat_intervalh() + 
+  stat_interval() + 
   scale_color_brewer()
 ```
 

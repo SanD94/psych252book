@@ -107,10 +107,10 @@ df.ads %>%
 df.credit %>% 
   select(where(is.numeric)) %>%
   correlate(quiet = T) %>%
-  select(rowname, income) %>% 
-  mutate(rowname = reorder(rowname, income)) %>%
+  select(term, income) %>% 
+  mutate(term = reorder(term, income)) %>%
   drop_na() %>% 
-  ggplot(aes(x = rowname, 
+  ggplot(aes(x = term, 
              y = income,
              fill = income)) +
   geom_hline(yintercept = 0) +
@@ -132,7 +132,7 @@ tmp = df.credit %>%
   correlate(diagonal = 0,
             quiet = T) %>%
   rearrange() %>%
-  column_to_rownames() %>%
+  column_to_rownames("term") %>%
   as.matrix() %>%
   corrplot()
 ```

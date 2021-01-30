@@ -19,6 +19,7 @@ library("knitr")      # for knitting RMarkdown
 library("kableExtra") # for making nice tables
 library("janitor")    # for cleaning column names
 library("broom")      # for tidying up linear models 
+library("broom.mixed")# for tidying up linear mixed models
 library("patchwork")  # for making figure panels
 library("lme4")       # for linear mixed effects models
 library("tidyverse")  # for wrangling, plotting, etc. 

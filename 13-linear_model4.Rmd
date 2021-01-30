@@ -194,7 +194,7 @@ df.plot = df.contrast %>%
 df.augment = fit_c %>% 
   augment() %>% 
   clean_names() %>% 
-  bind_cols(df.plot %>% select(performance, group, group_jitter))
+  bind_cols(df.plot %>% select(group, group_jitter))
 
 ggplot(data = df.plot, 
        mapping = aes(x = group_jitter,
@@ -234,7 +234,7 @@ df.tidy = fit %>%
 df.augment = fit %>% 
   augment() %>%
   clean_names() %>% 
-  bind_cols(df.plot %>% select(group_jitter, group_contrast))
+  bind_cols(df.plot %>% select(group_jitter))
 
 ggplot(data = df.plot,
        mapping = aes(x = group_jitter,
